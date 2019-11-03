@@ -10,6 +10,7 @@
 1. [Excluded Files](#excluded-files)
 1. [Included Files](#included-files)
 1. [Monorepo Setup](#monorepo-setup-extending-your-config)
+1. [Compiler Options](#compiler-options)
 
 ## Additional Typings
 
@@ -149,8 +150,10 @@ or `.vue` if your project uses React or Vue. (`tsconfig.includes`)
 ## Monorepo Setup (Extending your Config)
 
 In the case of a monorepo, rather than duplicating and changing a `tsconfig.json` for each project,
-each project should branch off of a base `tsconfig.json` that stores common configuration.
-(`tsconfig.extends`)
+each project should branch off of a base `tsconfig.json` that stores common configuration. With this
+syntax in mind, we also recommend for the time being not using project references. Since we usee
+Lerna for monorepos, `tsconfig.references` should be left as an empty array. (`tsconfig.extends`,
+`tsconfig.references`).
 
 > **Why?** By storing common configuration in a single, base config, you ensure that when you update
 > one config, you don't forget to update the others in the repo, which helps with consistent rules
@@ -160,16 +163,127 @@ each project should branch off of a base `tsconfig.json` that stores common conf
 ```JavaScript
 // Good
 {
-  "extends": ["../../tsconfig.json"],
+  "extends": ["../../tsconfig.json"]
 }
 
 // Bad
 {
   "foo": "bar",
+  "references": [{ "path": "some-other-tsconfig.json" }]
 }
 
 {
   "foo": "baz",
+}
+```
+<!-- prettier-ignore-end -->
+
+## Compiler Options
+
+### Charset
+
+The compiler's charset should be `utf8`. (`compilerOptions.charset`)
+
+> **Why?** We set the charset to utf-8 by default in browsers, so we think it makes sense to keep
+> our TypeScript the same.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "charset": "utf8"
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "charset": "ascii"
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Composite
+
+The compiler's composite option should be `false`. (`compilerOptions.composite`)
+
+> **Why?** Since we're not using project references, there's no reason for this to be enabled.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "composite": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "composite": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Declaration
+
+The compiler's declaration option should be `false`. (`compilerOptions.declaration`)
+
+> **Why?** In order to save transpile time, definitions should only be transpiled as needed, rather
+> than on every run. This is especially true for applications that may have filesystem watching,
+> such as something running on the Webpack dev server.
+
+### Declaration Directory
+
+The compiler's declaration directory option should (in most cases) be undefined.
+(`compilerOptions.declarationDir`)
+
+> **Why?** Most applications we write have no automatically generated declarations (see
+> [Declaration](#declaration)), and therefore we have no reason to set a value.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+  }
+}
+
+// Sometimes Bad (Unless you're actually generating declarations)
+{
+  "compilerOptions": {
+    "declarationDir": "./some-dir"
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Diagnostics
+
+The compiler's diagnostics option should either be true or false depending on the project's current
+needs. (`compilerOptions.diagnostics`)
+
+> > **Why?** If your running into unexplainable errors or performance loss, it may be good to enable
+> > diagnostics, but if not, it can easily clutter your console and you might accidentally lose
+> > track of other important data. We have no formal opinion on the diagnostics option.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "diagnostics": true
+  }
+}
+
+{
+  "compilerOptions": {
+    "diagnostics": false
+  }
 }
 ```
 <!-- prettier-ignore-end -->
