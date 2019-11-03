@@ -1,0 +1,27 @@
+{
+  "name": "@kienleholdings/typescript",
+  "version": "0.1.0",
+  "description": "A Bullshit-Free Approach to Typescript",
+  "private": true,
+  "scripts": {
+    "lint": "markdownlint --ignore node_modules **/*.md && prettier --check **/*.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kienleholdings/typescript.git"
+  },
+  "keywords": [
+    "typescript",
+    "kienle"
+  ],
+  "author": "Kienle Holdings LLC <hello@kienle.tech> (https://www.kienle.dev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kienleholdings/typescript/issues"
+  },
+  "homepage": "https://github.com/kienleholdings/typescript#readme",
+  "devDependencies": {
+    "markdownlint-cli": "^0.19.0",
+    "prettier": "^1.18.2"
+  }
+}

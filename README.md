@@ -1,2 +1,3 @@
-# typescript
-A Bullshit-Free Approach to Typescript
+# Typescript Style Guide
+
+> A Bullshit-Free Approach to Typescript
