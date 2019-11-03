@@ -50,14 +50,14 @@ Automatic Type Definition Acquisition should be disabled. (`tsconfig.typeAcquisi
 // Good
 {
   "typeAcquisition": {
-    enable: false
+    "enable": false
   }
 }
 
 // Bad
 {
   "typeAcquisition": {
-    enable: true
+    "enable": true
   }
 }
 ```
