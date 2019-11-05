@@ -239,7 +239,7 @@ The compiler's declaration option should be `false`. (`compilerOptions.declarati
 
 ### Declaration Directory
 
-The compiler's declaration directory option should (in most cases) be undefined.
+The compiler's declaration directory option should (in most cases) be `undefined`.
 (`compilerOptions.declarationDir`)
 
 > **Why?** Most applications we write have no automatically generated declarations (see
@@ -264,12 +264,12 @@ The compiler's declaration directory option should (in most cases) be undefined.
 
 ### Diagnostics
 
-The compiler's diagnostics option should either be true or false depending on the project's current
-needs. (`compilerOptions.diagnostics`)
+The compiler's diagnostics option should either be `true` or `false` depending on the project's
+current needs. (`compilerOptions.diagnostics`)
 
-> > **Why?** If your running into unexplainable errors or performance loss, it may be good to enable
-> > diagnostics, but if not, it can easily clutter your console and you might accidentally lose
-> > track of other important data. We have no formal opinion on the diagnostics option.
+> **Why?** If your running into unexplainable errors or performance loss, it may be good to enable
+> diagnostics, but if not, it can easily clutter your console and you might accidentally lose track
+> of other important data. We have no formal opinion on the diagnostics option.
 
 <!-- prettier-ignore-start -->
 ```JavaScript
@@ -280,9 +280,312 @@ needs. (`compilerOptions.diagnostics`)
   }
 }
 
+// Bad
 {
   "compilerOptions": {
     "diagnostics": false
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Emit BOM
+
+The compiler's emit Byte Order Mark (BOM) option should be `false`. (`compilerOptions.emitBOM`)
+
+> **Why?** It's unnecessary and doesn't add any value to your transpiled code.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "emitBOM": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "emitBOM": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Emit Deeclaration Only
+
+The compiler's emit declaration only option should be `false`.
+(`compilerOptions.emitDeclarationOnly`)
+
+> **Why?** Generally if you need to emit only a declaration, the CLI should be used rather than the
+> `tsconfig`.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "emitDeclarationOnly": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "emitDeclarationOnly": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Incremental Compilation
+
+The compiler's incremental option should be set to `false`. (`compilerOptions.incremental`)
+
+> **Why?** We've seen this break builds on occasion, especially when combining webpack builds with
+> server applications. Until this feature is more stable, we recommend disabling it.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "emitDeclarationOnly": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "emitDeclarationOnly": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Typescript Build Info File
+
+The compiler's ts build info file option should be `undefined`. (`compilerOptions.tsBuildInfoFile`)
+
+> **Why?** This option is dependent on `incremental` being true, which we recommend you keep
+> disabled.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "some-file-name"
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Inline Source Map
+
+The compiler's inline source map option should be `false`. (`compilerOptions.inlineSourceMap`)
+
+> **Why?** We like to have a source map file for each ts file, rather than one big file for your
+> entire project. Disabling this keeps your transpiled files clean and your code size small.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "inlineSourceMap": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "inlineSourceMap": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Inline Sources
+
+The compiler's inline sources option should be `false`. (`compilerOptions.inlineSources`)
+
+> **Why?** `inlineSources` has `inlineSourceMap` as a prerequisite which we recommend you disable.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "inlineSources": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "inlineSources": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### JSX
+
+The compiler's JSX option should be `react` if your project is using React, (or `react-native` if
+your project is using React Native) otherwise you can leave this option `undefined`.
+(`compilerOptions.jsx`)
+
+> **Why?** This is required for any React project, otherwise JSX won't work as expected.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good if project uses React and JSX
+{
+  "compilerOptions": {
+    "jsx": "react"
+  }
+}
+
+// Good if project uses React Native and JSX
+{
+  "compilerOptions": {
+    "jsx": "react-native"
+  }
+}
+
+// Good if project doesn't use React / JSX
+{
+  "compilerOptions": {
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### React Namespace
+
+The compiler's react namespace option should be `undefined`. (`compilerOptions.reactNamespace`)
+
+> **Why?** Unless you really really need to change thee React namespace, we highly recommend leaving
+> it default.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "reactNamespace": "Foo"
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### List Files
+
+The compiler's list files option should be `false`. (`compilerOptions.listFiles`)
+
+> **Why?** Listing file names in compilation adds noise to the console.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "listFiles": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "listFiles": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Map Root
+
+The compiler's map root option should be `undefined`. (`compilerOptions.mapRoot`)
+
+> **Why?** We think leaving the map root to the default generated directory is fine.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "mapRoot": {
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "mapRoot": "./some-map-direectory"
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Module
+
+The compiler's module option should be `commonjs`. (`compilerOptions.module`)
+
+> **Why?** Commonjs works best with both browsers and the current version of Node.js. As Node.js
+> progresses, we may move to es2015 or esnext for node-only projects, but that isn't considered
+> stable enough.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "module": "commonjs"
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "module": "amd"
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### New Line
+
+The compiler's new line option should be `LF`. (`compilerOptions.newLine`)
+
+> **Why?** This matches our commonly-used
+> [Prettier config](https://github.com/kienleholdings/prettier).
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "newLine": "LF"
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "newLine": "CRLF"
   }
 }
 ```
