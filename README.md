@@ -590,3 +590,306 @@ The compiler's new line option should be `LF`. (`compilerOptions.newLine`)
 }
 ```
 <!-- prettier-ignore-end -->
+
+### No Emit
+
+The compiler's no emit option should be either `true` or `false` on a peer-project basis.
+(`compilerOptions.noEmit`)
+
+> **Why?** Most projects will want to leave this as true, however, if your project is using a module
+> bundler (i.e. Webpack) only, there's no point in generating js files outside of the bundler.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "noEmit": false
+  }
+}
+
+// Good if you're using a module bundler
+{
+  "compilerOptions": {
+    "noEmit": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### No Emit Helpers
+
+The compiler's no emit helpers option should be `true`. (`compilerOptions.noEmitHelpers`)
+
+> **Why?** When transpiling down to ES5, Typescript creates "helper" functions that do the fancy ES6
+> things in ES5. The down side is that it creates these helpers on a per-file basis, which bloats
+> your final code. By setting this to true, as well as setting `importHelpers` to true, we can
+> reduce our final code size.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "noEmitHelpers": true,
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "noEmitHelpers": false
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### No Emit on Error
+
+The compiler's no emit on error option should be `true`. (`compilerOptions.noEmitOnError`)
+
+> **Why?** Imagine you run a build but there's an error, and then later somebody accidentally
+> publishes that code, that's no good! By not emitting on error, you ensure that whatever is in your
+> `lib` directory is error-free.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "noEmitOnError": true
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "noEmitOnError": false
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### No Implicit Any
+
+The compiler's no implicit any option should be `true`. (`compilerOptions.noImplicitAny`)
+
+> **Why?** Since we're using Typescript, we want every variable to have a type. Any should only be
+> explicitly set, not inferred.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "noImplicitAny": true
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "noImplicitAny": false
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### No Implicit This
+
+The compiler's no implicit this option should be `true`. (`compilerOptions.noImplicitThis`)
+
+> **Why?** Basically the same reasoning as `noImplicitAny` - if you're gonna use TypeScript, you
+> better be sure you're using Typescript.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "noImplicitThis": true
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "noImplicitThis": false
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### No Unused Locals
+
+The compiler's no unused locals option should be `true`. (`compilerOptions.noUnusedLocals`)
+
+> **Why?** Having unused variables increases code size and can lead to unexpected errors.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "noUnusedLocals": true
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "noUnusedLocals": false
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### No Unused Parameters
+
+The compiler's no unused parameters option should be `false`. (`compilerOptions.noUnusedParameters`)
+
+> **Why?** Breaking our usual pattern here, having to use each function parameter gets very annoying
+> during testing, so we'd rather keep that disabled.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "noUnusedParameters": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "noUnusedParameters": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### No Lib
+
+The compiler's no lib option should be `false`. (`compilerOptions.noLib`)
+
+> **Why?** Unless you have an incredibly special case where you need to use the non-default
+> Typescript library, we recommend leaving this `false`.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "noLib": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "noLib": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### No Resolve
+
+The compiler's no resolve option should be `false`. (`compilerOptions.noResolve`)
+
+> **Why?** When `noResolve` is true, the compiler will skip importing unresolved modules, rather
+> than returning an error, which may lead to unexpected behavior.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "noResolve": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "noResolve": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### No Strict Generic Checks
+
+The compiler's no strict generic checks option should be `false`.
+(`compilerOptions.noStrictGenericChecks`)
+
+> **Why?** We like to keep as much strict type checking enabled as possible, as long as it doesn't
+> get in the way of development.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "noStrictGenericChecks": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "noStrictGenericChecks": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Skip Default Lib Check
+
+The compiler's skip default lib check option should be `false`.
+(`compilerOptions.skipDefaultLibCheck`)
+
+> **Why?** `skipDefaultLibCheck` is deprecated.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "skipDefaultLibCheck": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "skipDefaultLibCheck": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Skip Lib Check
+
+The compiler's skip lib check option should be `false`. (`compilerOptions.`)
+
+> **Why?** Libraries (.d.ts) are still a part of TypeScript, and should have their types checked.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "skipLibCheck": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "skipLibCheck": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
