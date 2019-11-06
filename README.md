@@ -893,3 +893,393 @@ The compiler's skip lib check option should be `false`. (`compilerOptions.`)
 }
 ```
 <!-- prettier-ignore-end -->
+
+### Output File
+
+The compiler's output file option should be `undefined`. (`compilerOptions.outFile`)
+
+> **Why?** For a very detailed article, check
+> [this](https://basarat.gitbooks.io/typescript/docs/tips/outFile.html) out. It's a pretty good
+> summary of why `outFile` is a bad idea.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "outFile": "./some-file.js"
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Output Directory
+
+The compiler's output directory option should be `./lib`. (`compilerOptions.outDir`)
+
+> **Why?** We like to standardize and have all of our transpiled JavaScript in a `lib` folder for
+> every project.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "outDir": "./lib"
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "outDir": "./not-lib"
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Preserve Const Enums
+
+The compiler's preserve const enums option should be `false`. (`compilerOptions.`)
+
+> **Why?** Preserving const enums in the final code adds unnecessary file size to your final output.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "preserveConstEnums": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "preserveConstEnums": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Preserve Symbolic Links
+
+The compiler's preserve symlinks option should be `false`. (`compilerOptions.preserveSymlinks`)
+
+> **Why?** Symlinks are great, but they can easily vary from machine-to-machine. Because of this, we
+> recommend keeping this false, so that in your final transpiled code, symlinks are displayed as
+> full paths.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "preserveSymlinks": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "preserveSymlinks": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Preserve Watch Output
+
+The compiler's preserve watch output option should be `false`.
+(`compilerOptions.preserveWatchOutput`)
+
+> **Why?** Keeping old watch output adds noise to the console, which may prevent you from spotting
+> errors. We recommend keeping this false unless you like having a **very** verbose console.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "preserveWatchOutput": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "preserveWatchOutput": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Pretty
+
+The compiler's pretty option should be `true`. (`compilerOptions.pretty`)
+
+> **Why?** Colors are good for UX and help the developer spot things. We recommend keeping this
+> enabled unless you're colorblind or just simply hate colors in your console.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "pretty": true
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "pretty": false
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Remove Comments
+
+The compiler's remove comments option should be `true`. (`compilerOptions.removeComments`)
+
+> **Why?** Comments increase final code size. Comments are fine in your source files, but transpiled
+> code really isn't meant to be read by a human anyway.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "removeComments": true
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "removeComments": false
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Root Directory
+
+The compiler's root dir option should be `./src`. (`compilerOptions.rootDir`)
+
+> **Why?** Wee like to keep all non-transpiled files (including tests) in a single `src` directory.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "rootDir": "./src"
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "rootDir": "./not-src"
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Isolated Modules
+
+The compiler's isolated modules option should be `true`. (`compilerOptions.isolatedModules`)
+
+> **Why?** This performs additional safety checks on things such as `transpileModule`.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "isolatedModules": true
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "isolatedModules": false
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Source Maps
+
+The compiler's source map option should be `true`, but developers should take extra care to ensure
+the `.map` files don't make it to packages, as they increase package size.
+(`compilerOptions.sourceMap`)
+
+> **Why?** Source maps are amazing tools for development, and should be generated as long as they
+> aren't adding weight to your final package.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "sourceMap": true
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "sourceMap": false
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Source Root
+
+The compiler's source root option should be `./src`. (`compilerOptions.sourceRoot`)
+
+> **Why?** The source root option helps the debugger find your code. It should be set to the same
+> directory that your source code is in.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "sourceRoot": "./src"
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "sourceRoot": "./not-src"
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Suppress Excess Property Errors
+
+The compiler's suppress excess property errors option should be `false`.
+(`compilerOptions.suppressExcessPropertyErrors`)
+
+> **Why?** Suppressing errors, although more convenient for the developer, may lead to further
+> errors down the line.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "suppressExcessPropertyErrors": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "suppressExcessPropertyErrors": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Suppress Implicit Any Index Errors
+
+The compiler's suppress implicit any index errors option should be `false`.
+(`compilerOptions.suppressImplicitAnyIndexErrors`)
+
+> **Why?** Suppressing errors, although more convenient for the developer, may lead to further
+> errors down the line.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "suppressImplicitAnyIndexErrors": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "suppressImplicitAnyIndexErrors": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Strip Internal
+
+The compiler's strip internal option should be `true`. (`compilerOptions.stripInternal`)
+
+> **Why?** If a definition is explicitly marked `@internal`, this stops declarations from being
+> generated. We set this to `true` as that is the expected behavior for Typescript.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "stripInternal": true
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "stripInternal": false
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
+### Target
+
+The compiler's option is project-dependent. (`compilerOptions.target`)
+
+> **Why?** If you want to support older browsers, you may want to use `es3`. If you want to support
+> only `Node 10+`, you may want to use ES6. In general, we think either `es5` or `es6` will work as
+> a default, but in the end, it depends on your project needs.
+
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "target": "es5"
+  }
+}
+
+{
+  "compilerOptions": {
+    "target": "es6"
+  }
+}
+
+{
+  "compilerOptions": {
+    "target": "es3"
+  }
+}
+
+{
+  "compilerOptions": {
+    "target": "esnext"
+  }
+}
+```
+<!-- prettier-ignore-end -->
