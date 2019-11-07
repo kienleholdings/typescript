@@ -11,7 +11,6 @@
 1. [Included Files](#included-files)
 1. [Monorepo Setup](#monorepo-setup-extending-your-config)
 1. [Compiler Options](#compiler-options)
-1. [Base Config](#base-config)
 1. [Code Style](#code-style)
 1. [Resources](#resources)
 1. [Amendments](#amendments)
@@ -2290,27 +2289,6 @@ The compiler's watch option should be `false`. (`compilerOptions.watch`)
 ```
 <!-- prettier-ignore-end -->
 
-## Base Config
-
-A base configuration file can be found [here](tsconfig.base.json).
-
-## Extending the Base Config
-
-Along with everything in the base config, you'll need to manually configure the following
-
-- [`compilerOptions.baseUrl`](#base-url)
-- [`compilerOptions.jsx`](#jsx)
-- [`compilerOptions.lib`](#lib)
-- [`compilerOptions.outDir`](#out-dir)
-- [`compilerOptions.rootDir`](#root-dir)
-- [`compilerOptions.sourceRoot`](#source-root)
-- [`compilerOptions.target`](#target)
-- [`compilerOptions.types`](#types)
-- [`exclude`](#excluded-files)
-- [`extends`](#monorepo-setup-extending-your-config)
-- [`files`](#additional-typings)
-- [`include`](#included-files)
-
 ## Code Style
 
 All TypeScript projects should confirm to the Kienle Holdings Prettier Style Guide. More information
@@ -2328,15 +2306,9 @@ configure this for now, but a pre-built config will be coming soon.
 - [TypeScript Handbook](https://github.com/Microsoft/TypeScript-Handbook)
 - [TSConfig Schema](http://json.schemastore.org/tsconfig)
 
-### Tools
-
-- [Pre-Commit Hooks for Prettier](https://prettier.io/docs/en/precommit.html)
-- [Prettier for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-- [Prettier CLI](https://prettier.io/docs/en/cli.html)
-
 ### Configurations
 
-- [Kienle Holdings `.prettierrc.js`](https://github.com/kienleholdings/prettier/blob/master/.prettierrc.js)
+- [Kienle Holdings `base-tsconfig`](https://github.com/kienleholdings/typescript/tree/master/packages/base-tsconfig)
 
 ## Amendments
 

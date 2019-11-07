@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@kienleholdings/prettier-config@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@kienleholdings/prettier-config/-/prettier-config-0.1.0.tgz#d12309f06c1b1dad7892190f21e65b180812a17e"
+  integrity sha512-hZjvaQYe3NCXL4/8+FIjoErC1oaIIMPkcSic2BRLeprYe8m7EEEHT1KvNbHVORwMROH49HB5f9VsDvjzhPmhrg==
+
 argparse@^1.0.7:
   version "1.0.10"
   resolved "https://registry.yarnpkg.com/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
@@ -65,9 +70,9 @@ get-stdin@~5.0.1:
   integrity sha1-Ei4WFZHiH/TFJTAwVpPyDmOTo5g=
 
 glob@~7.1.2:
-  version "7.1.5"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.5.tgz#6714c69bee20f3c3e64c4dd905553e532b40cdc0"
-  integrity sha512-J9dlskqUXK1OeTOYBEn5s8aMukWMwWfs+rPTn/jn50Ux4MNXVhubL1wu/j2t+H4NVI+cXEcCaYellqaPVGXNqQ==
+  version "7.1.6"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.6.tgz#141f33b81a7c2492e125594307480c46679278a6"
+  integrity sha512-LwaxwyZ72Lk7vZINtNNrywX0ZuLyStrdDtabefZKAY5ZGJhVtgdznluResxNmPitE0SAO+O26sWTHeKSI2wMBA==
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -217,6 +222,11 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   integrity sha1-PFMZQukIwml8DsNEhYwobHygpgo=
+
+typescript@^3.7.2:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.7.2.tgz#27e489b95fa5909445e9fef5ee48d81697ad18fb"
+  integrity sha512-ml7V7JfiN2Xwvcer+XAf2csGO1bPBdRbFCkYBczNZggrBZ9c7G3riSUeJmqEU5uOtXNPMhE3n+R4FA/3YOAWOQ==
 
 uc.micro@^1.0.1, uc.micro@^1.0.5:
   version "1.0.6"
