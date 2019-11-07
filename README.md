@@ -2294,8 +2294,13 @@ The compiler's watch option should be `false`. (`compilerOptions.watch`)
 All TypeScript projects should confirm to the Kienle Holdings Prettier Style Guide. More information
 as well as configuration can be found [here](https://github.com/kienleholdings/prettier).
 Additionally, all TypeScript projects should confirm to the
-[AirBNB JavaScript Style Guide](https://github.com/airbnb/javascript). You'll have to manually
-configure this for now, but a pre-built config will be coming soon.
+[AirBNB JavaScript Style Guide](https://github.com/airbnb/javascript). We have a super convinent way
+to do this.
+
+- If your project doesn't use React, install
+  [`@kienleholdings/eslint-config-base](https://github.com/kienleholdings/typescript/tree/master/packages/eslint-config-base)
+- If your project uses React, install
+  [`@kienleholdings/eslint-config-react](https://github.com/kienleholdings/typescript/tree/master/packages/eslint-config-react)
 
 ## Resources
 

@@ -1,0 +1,41 @@
+{
+  "name": "@kienleholdings/eslint-config-base",
+  "version": "0.1.1",
+  "description": "Kienle Holdings Base (Non-React) ESLint Config",
+  "prettier": "@kienleholdings/prettier-config",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kienleholdings/typescript.git"
+  },
+  "keywords": [
+    "typescript",
+    "kienle"
+  ],
+  "author": "Kienle Holdings LLC <hello@kienle.tech> (https://www.kienle.dev)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kienleholdings/typescript/issues"
+  },
+  "homepage": "https://github.com/kienleholdings/typescript/tree/master/packages/eslint-config-base",
+  "devDependencies": {
+    "@kienleholdings/prettier-config": "^0.1.0",
+    "eslint": "^6.6.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.7.2"
+  },
+  "peerDependencies": {
+    "@kienleholdings/prettier-config": "^0.1.0",
+    "eslint": "^6.6.0",
+    "prettier": "^1.18.2",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.6.1",
+    "@typescript-eslint/parser": "^2.6.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1"
+  }
+}
