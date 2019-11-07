@@ -441,6 +441,24 @@ The compiler's declaration option should be `false`. (`compilerOptions.declarati
 > than on every run. This is especially true for applications that may have filesystem watching,
 > such as something running on the Webpack dev server.
 
+<!-- prettier-ignore-start -->
+```JavaScript
+// Good
+{
+  "compilerOptions": {
+    "declaration": false
+  }
+}
+
+// Bad
+{
+  "compilerOptions": {
+    "declaration": true
+  }
+}
+```
+<!-- prettier-ignore-end -->
+
 ### Declaration Directory
 
 The compiler's declaration directory option should (in most cases) be `undefined`.
@@ -520,9 +538,9 @@ current needs. (`compilerOptions.diagnostics`)
 
 ### Disable Size Limit
 
-The compiler's disable size limit option should be `false`. (`compilerOptions.disableSizeLimit`)
+The compiler's disable size limit option should be `true`. (`compilerOptions.disableSizeLimit`)
 
-> **Why?** One of thee great things about TypeScript is its scalability across large projects.
+> **Why?** One of the great things about TypeScript is its scalability across large projects.
 > Enforcing a size limit goes against that.
 
 <!-- prettier-ignore-start -->
@@ -530,14 +548,14 @@ The compiler's disable size limit option should be `false`. (`compilerOptions.di
 // Good
 {
   "compilerOptions": {
-    "disableSizeLimit": false
+    "disableSizeLimit": true
   }
 }
 
 // Bad
 {
   "compilerOptions": {
-    "disableSizeLimit": true
+    "disableSizeLimit": false
   }
 }
 ```
@@ -545,7 +563,7 @@ The compiler's disable size limit option should be `false`. (`compilerOptions.di
 
 ### Downlevel Iteration
 
-The compiler's option should be ``. (`compilerOptions.downlevelIteration`)
+The compiler's option should be `true`. (`compilerOptions.downlevelIteration`)
 
 > **Why?** Provides better support for iterables in `for-of`, `spread`, and `destructuring` when
 > targeting ES5 or lower.
@@ -755,14 +773,14 @@ The compiler's incremental option should be set to `false`. (`compilerOptions.in
 // Good
 {
   "compilerOptions": {
-    "emitDeclarationOnly": false
+    "incremental": false
   }
 }
 
 // Bad
 {
   "compilerOptions": {
-    "emitDeclarationOnly": true
+    "incremental": true
   }
 }
 ```
@@ -925,7 +943,7 @@ The compiler's keyof strings only option should be `true`. (`compilerOptions.key
 ### Lib
 
 The compiler's lib option should always include `esnext` - anything else is project dependent.
-(`compilerOptions.`)
+(`compilerOptions.lib`)
 
 > **Why?** We always want to use the latest bleeding edge features, which is why be default we like
 > to import the `esnext` lib. Anything else you need to add (such as `dom` for working with
@@ -1275,7 +1293,7 @@ The compiler's no implicit any option should be `true`. (`compilerOptions.noImpl
 ```
 <!-- prettier-ignore-end -->
 
-## No Implicit Returns
+### No Implicit Returns
 
 The compiler's no implicit returns option should be `true`. (`compilerOptions.noImplicitReturns`)
 
@@ -2266,3 +2284,24 @@ The compiler's watch option should be `false`. (`compilerOptions.watch`)
 }
 ```
 <!-- prettier-ignore-end -->
+
+## Base Config
+
+A base configuration file can be found [here](tsconfig.base.json).
+
+## Extending the Base Config
+
+Along with everything in the base config, you'll need to manually configure the following
+
+- [`compilerOptions.baseUrl`](#base-url)
+- [`compilerOptions.jsx`](#jsx)
+- [`compilerOptions.lib`](#lib)
+- [`compilerOptions.outDir`](#out-dir)
+- [`compilerOptions.rootDir`](#root-dir)
+- [`compilerOptions.sourceRoot`](#source-root)
+- [`compilerOptions.target`](#target)
+- [`compilerOptions.types`](#types)
+- [`exclude`](#excluded-files)
+- [`extends`](#monorepo-setup-extending-your-config)
+- [`files`](#additional-typings)
+- [`include`](#included-files)
