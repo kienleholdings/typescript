@@ -2298,9 +2298,9 @@ Additionally, all TypeScript projects should confirm to the
 to do this.
 
 - If your project doesn't use React, install
-  [`@kienleholdings/eslint-config-base](https://github.com/kienleholdings/typescript/tree/master/packages/eslint-config-base)
+  [`@kienleholdings/eslint-config-base`](https://github.com/kienleholdings/typescript/tree/master/packages/eslint-config-base)
 - If your project uses React, install
-  [`@kienleholdings/eslint-config-react](https://github.com/kienleholdings/typescript/tree/master/packages/eslint-config-react)
+  [`@kienleholdings/eslint-config-react`](https://github.com/kienleholdings/typescript/tree/master/packages/eslint-config-react)
 
 ## Resources
 
