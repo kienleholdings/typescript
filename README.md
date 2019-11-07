@@ -837,23 +837,23 @@ The compiler's inline sources option should be `false`. (`compilerOptions.inline
 
 ### Isolated Modules
 
-The compiler's isolated modules option should be `true`. (`compilerOptions.isolatedModules`)
+The compiler's isolated modules option should be `false`. (`compilerOptions.isolatedModules`)
 
-> **Why?** This performs additional safety checks on things such as `transpileModule`.
+> **Why?** This breaks type checking for files that aren't modules, such as test files.
 
 <!-- prettier-ignore-start -->
 ```JavaScript
 // Good
 {
   "compilerOptions": {
-    "isolatedModules": true
+    "isolatedModules": false
   }
 }
 
 // Bad
 {
   "compilerOptions": {
-    "isolatedModules": false
+    "isolatedModules": true
   }
 }
 ```

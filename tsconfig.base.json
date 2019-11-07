@@ -28,7 +28,7 @@
     "incremental": false,
     "inlineSourceMap": false,
     "inlineSources": false,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "keyofStringsOnly": true,
     "listEmittedFiles": false,
     "listFiles": false,
