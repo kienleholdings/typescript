@@ -1,6 +1,6 @@
 {
   "name": "@kienleholdings/base-tsconfig",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Kienle Holdings Base TSConfig",
   "prettier": "@kienleholdings/prettier-config",
   "main": "tsconfig.json",
