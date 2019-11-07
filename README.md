@@ -11,6 +11,10 @@
 1. [Included Files](#included-files)
 1. [Monorepo Setup](#monorepo-setup-extending-your-config)
 1. [Compiler Options](#compiler-options)
+1. [Base Config](#base-config)
+1. [Code Style](#code-style)
+1. [Resources](#resources)
+1. [Amendments](#amendments)
 
 ## Additional Typings
 
@@ -2306,3 +2310,35 @@ Along with everything in the base config, you'll need to manually configure the 
 - [`extends`](#monorepo-setup-extending-your-config)
 - [`files`](#additional-typings)
 - [`include`](#included-files)
+
+## Code Style
+
+All TypeScript projects should confirm to the Kienle Holdings Prettier Style Guide. More information
+as well as configuration can be found [here](https://github.com/kienleholdings/prettier).
+Additionally, all TypeScript projects should confirm to the
+[AirBNB JavaScript Style Guide](https://github.com/airbnb/javascript). You'll have to manually
+configure this for now, but a pre-built config will be coming soon.
+
+## Resources
+
+### TypeScript
+
+- [Project Homepage](https://www.typescriptlang.org/)
+- [TypeScript Spec](https://github.com/Microsoft/TypeScript/blob/master/doc/spec.md)
+- [TypeScript Handbook](https://github.com/Microsoft/TypeScript-Handbook)
+- [TSConfig Schema](http://json.schemastore.org/tsconfig)
+
+### Tools
+
+- [Pre-Commit Hooks for Prettier](https://prettier.io/docs/en/precommit.html)
+- [Prettier for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Prettier CLI](https://prettier.io/docs/en/cli.html)
+
+### Configurations
+
+- [Kienle Holdings `.prettierrc.js`](https://github.com/kienleholdings/prettier/blob/master/.prettierrc.js)
+
+## Amendments
+
+This guide is subject to change. Do you see something that can be improved on? Go ahead and give it
+a fork and shoot us over a PR. See an issue? Don't forget to log it!
