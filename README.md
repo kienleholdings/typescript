@@ -1853,21 +1853,22 @@ The compiler's skip default lib check option should be `false`.
 
 The compiler's skip lib check option should be `false`. (`compilerOptions.`)
 
-> **Why?** Libraries (.d.ts) are still a part of TypeScript, and should have their types checked.
+> **Why?** For some reason this also checks `node_modules`, and not everyone publishes technically
+> correct types to NPM. We leave this disabled until that's fixed.
 
 <!-- prettier-ignore-start -->
 ```JavaScript
 // Good
 {
   "compilerOptions": {
-    "skipLibCheck": false
+    "skipLibCheck": true
   }
 }
 
 // Bad
 {
   "compilerOptions": {
-    "skipLibCheck": true
+    "skipLibCheck": false
   }
 }
 ```
