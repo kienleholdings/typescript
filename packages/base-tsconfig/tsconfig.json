@@ -15,7 +15,7 @@
     "composite": false,
     "declaration": false,
     "declarationMap": false,
-    "diagnostics": true,
+    "diagnostics": false,
     "disableSizeLimit": true,
     "downlevelIteration": true,
     "emitBOM": false,

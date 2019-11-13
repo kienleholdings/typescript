@@ -526,14 +526,14 @@ current needs. (`compilerOptions.diagnostics`)
 // Good
 {
   "compilerOptions": {
-    "diagnostics": true
+    "diagnostics": false
   }
 }
 
-// Bad
+// Also good
 {
   "compilerOptions": {
-    "diagnostics": false
+    "diagnostics": true
   }
 }
 ```
