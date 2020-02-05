@@ -1068,11 +1068,12 @@ The compiler's max node module JS depth option should be `undefined` in most cas
 
 ### Module
 
-The compiler's module option should be `commonjs`. (`compilerOptions.module`)
+The compiler's module option should be `esnext` or `commonjs` depending on project requirements.
+(`compilerOptions.module`)
 
-> **Why?** Commonjs works best with both browsers and the current version of Node.js. As Node.js
-> progresses, we may move to es2015 or esnext for node-only projects, but that isn't considered
-> stable enough.
+> **Why?** esnext works the best for code splitting and tree shaking with Webpack, however, most
+> versions of node.js don't accept the `import` keyword as of yet. If you're using a version of
+> node.js that doesn't accept `import`, we recommend you stick with commonjs.
 
 <!-- prettier-ignore-start -->
 ```JavaScript
@@ -1080,6 +1081,13 @@ The compiler's module option should be `commonjs`. (`compilerOptions.module`)
 {
   "compilerOptions": {
     "module": "commonjs"
+  }
+}
+
+// Also Good
+{
+  "compilerOptions": {
+    "module": "esnext"
   }
 }
 

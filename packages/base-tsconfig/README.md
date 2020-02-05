@@ -4,8 +4,8 @@
 
 ## Version
 
-- Package Version: `0.1.2`
-- Style Guide Version: `0.1.2`
+- Package Version: `0.1.3`
+- Style Guide Version: `0.1.3`
 
 ## Installation
 
@@ -25,8 +25,8 @@
 
 ## Recommended Customization
 
-Going off by the base config is a great start, but won't get you too far. We recommend seeeing if
-you need to modify the following:
+Going off by the base config is a great start, but won't get you too far. We recommend setting the
+following:
 
 - [`compilerOptions.baseUrl`](https://github.com/kienleholdings/typescript#base-url)
 - [`compilerOptions.jsx`](https://github.com/kienleholdings/typescript#jsx)
@@ -39,3 +39,7 @@ you need to modify the following:
 - [`exclude`](https://github.com/kienleholdings/typescript#excluded-files)
 - [`files`](https://github.com/kienleholdings/typescript#additional-typings)
 - [`include`](https://github.com/kienleholdings/typescript#included-files)
+
+A version `0.1.3` change marked `esnext` as a valid option for `compilerOptions.module` but left
+`commonjs` as a default for backwards compatibility. If you're running webpack, we recommend setting
+that for better tree shaking and code splitting.
