@@ -1,6 +1,6 @@
 {
   "name": "@kienleholdings/eslint-config-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Kienle Holdings React ESLint Config",
   "prettier": "@kienleholdings/prettier-config",
   "main": "index.js",
@@ -19,26 +19,26 @@
   },
   "homepage": "https://github.com/kienleholdings/typescript/tree/master/packages/eslint-config-react",
   "devDependencies": {
-    "@kienleholdings/prettier-config": "^0.1.0",
-    "eslint": "^6.6.0",
-    "prettier": "^1.18.2",
-    "typescript": "^3.7.2"
+    "@kienleholdings/prettier-config": "^0.1.1",
+    "eslint": "^7.2.0",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.3"
   },
   "peerDependencies": {
-    "@kienleholdings/prettier-config": "^0.1.0",
-    "eslint": "^6.6.0",
-    "prettier": "^1.18.2",
-    "typescript": "^3.7.2"
+    "@kienleholdings/prettier-config": "^0.1.1",
+    "eslint": "^7.2.0",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.3"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.6.1",
-    "@typescript-eslint/parser": "^2.6.1",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.5.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-react-hooks": "^1.7.0"
+    "@typescript-eslint/eslint-plugin": "^3.0.1",
+    "@typescript-eslint/parser": "^3.0.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.3",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4.0.4"
   }
 }
