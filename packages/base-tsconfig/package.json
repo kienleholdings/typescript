@@ -1,6 +1,6 @@
 {
   "name": "@kienleholdings/base-tsconfig",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Kienle Holdings Base TSConfig",
   "prettier": "@kienleholdings/prettier-config",
   "main": "tsconfig.json",
@@ -21,9 +21,9 @@
   "devDependencies": {
     "@kienleholdings/prettier-config": "^0.1.1",
     "prettier": "^2.0.5",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.5"
   },
   "peerDependencies": {
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.5"
   }
 }
