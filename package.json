@@ -5,7 +5,7 @@
   "prettier": "@kienleholdings/prettier-config",
   "private": true,
   "scripts": {
-    "lint": "markdownlint --ignore node_modules **/*.md && prettier --check **/*.md"
+    "lint": "prettier --check **/*.md"
   },
   "repository": {
     "type": "git",
