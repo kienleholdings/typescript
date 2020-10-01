@@ -11,12 +11,14 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
+    '@typescript-eslint/no-use-before-define': ['error'],
     'import/no-extraneous-dependencies': [
       'error',
       {
         devDependencies: ['**/*.test.ts'],
       },
     ],
+    'no-use-before-define': 'off',
     'prettier/prettier': ['error'],
   },
   settings: {
