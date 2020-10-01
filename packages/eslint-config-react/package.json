@@ -1,6 +1,6 @@
 {
   "name": "@kienleholdings/eslint-config-react",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Kienle Holdings React ESLint Config",
   "prettier": "@kienleholdings/prettier-config",
   "main": "index.js",
